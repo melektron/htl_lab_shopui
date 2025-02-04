@@ -1,85 +1,62 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+
+import { ref } from "vue";
+import Button from "primevue/button";
+
 </script>
 
+
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+    <main>
+        <div class="bar-wrapper">
+            <Toolbar>
+                <template #start>
+                    <Button icon="pi pi-refresh " severity="secondary" text />
+                    <Button icon="pi pi-plus" class="mr-2" severity="secondary" text />
+                    <Button icon="pi pi-print" class="mr-2" severity="secondary" text />
+                    <Button icon="pi pi-upload" severity="secondary" text />
+                </template>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+                <template #center>
+                    <IconField>
+                        <InputIcon>
+                            <i class="pi pi-search" />
+                        </InputIcon>
+                        <InputText placeholder="Search" />
+                    </IconField>
+                </template>
 
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
+                <template #end> 
+                    <SplitButton label="Save" :model="items">
 
-  <RouterView />
+                    </SplitButton>
+                    <span>hi </span>
+                </template>
+            </Toolbar>
+        </div>
+        
+    </main>
+    <Toast />
 </template>
 
+
 <style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
+main {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+
+    grid:
+        "bar"
+        "table";
+    grid-template-columns: 1fr;
+    grid-template-rows: 3em 1fr;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
+.menu-wrapper
 
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
+.bar-wrapper {
+    grid-area: bar;
 
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
 }
 </style>
