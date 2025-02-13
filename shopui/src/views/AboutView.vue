@@ -1,15 +1,46 @@
-<template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
-</template>
+<!--
+ELEKTRON © 2025 - now
+Written by melektron
+www.elektron.work
+13.02.25, 17:37
 
-<style>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-}
-</style>
+About dialog that can be shown using
+-->
+
+<script setup lang="ts">
+import { ref } from 'vue';
+
+
+const visible = ref(false);
+
+</script>
+
+<template>
+    <div class="flex flex-col justify-center items-center text-center text-lg">
+        <div class="pb-6 px-16 border-b-8">
+            <span class="pi pi-shop !text-9xl pr-2"></span>
+            <span class="leading-[100%] align-top text-9xl">
+                ShopUI<sup>&reg</sup>
+            </span>
+        </div>
+        <p class="pt-6">
+            The one and only solution to manage all your business needs.<br>
+            From viewing to screwing your customers, we've got you covered!
+        </p>
+        <p class="pt-6 text-2xl">
+            Start your Business today with ShopUI<sup>&reg</sup>
+        </p>
+
+        <p class="text-2xl flex gap-std">
+            <Button label="Getting started" />
+            <Button label="Credits" @click="visible = true"/>
+        </p>
+        
+        <Dialog v-model:visible="visible" modal header="Credits">
+            Database Backend: MrFlunter<br>
+            Frontend and Systems: melektron<br>
+            &copy ELEKTRON 2025 - now<br>
+            https://github.com/melektron/shopui (maybe in the future)
+        </Dialog>
+    </div>
+</template>

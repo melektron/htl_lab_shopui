@@ -11,7 +11,7 @@ class Customer(sqlmodel.SQLModel, table=True):
     model_config = pydantic.ConfigDict(
         extra="forbid"
     )
-    user_id: int                            = sqlmodel.Field(schema_extra={"validation_alias": "Nr."}, primary_key=True)
+    customer_id: int                        = sqlmodel.Field(schema_extra={"validation_alias": "Nr."}, primary_key=True)
     title: str                              = sqlmodel.Field(schema_extra={"validation_alias":"Anrede"})
     first_name: str                         = sqlmodel.Field(schema_extra={"validation_alias":"Vorname"})
     last_name: str                          = sqlmodel.Field(schema_extra={"validation_alias":"Nachname"})

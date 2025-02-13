@@ -1,6 +1,7 @@
 import "./assets/main.css"
 
 import { createApp } from "vue"
+import router from "./router";
 import App from "./App.vue"
 
 import PrimeVue from "primevue/config";
@@ -15,6 +16,13 @@ import Menubar from "primevue/menubar";
 import Toolbar from "primevue/toolbar";
 import Toast from "primevue/toast";
 import ToastService from "primevue/toastservice";
+import PanelMenu from "primevue/panelmenu";
+import Dialog from "primevue/dialog";
+import Card from "primevue/card";
+import Fieldset from "primevue/fieldset";
+import Message from "primevue/message";
+import DataTable from "primevue/datatable";
+import Column from "primevue/column";
 
 
 const app = createApp(App)
@@ -42,6 +50,7 @@ app.use(PrimeVue, {
     }
 });
 app.use(ToastService);
+app.use(router)
 
 app.component("InputText", InputText);
 app.component("Button", Button);
@@ -50,5 +59,13 @@ app.component("Toolbar", Toolbar);
 app.component("InputIcon", InputIcon);
 app.component("IconField", IconField);
 app.component("Toast", Toast);
+app.component("PanelMenu", PanelMenu);
+app.component("Dialog", Dialog);
+app.component("Card", Card);
+app.component("Fieldset", Fieldset);
+app.component("Message", Message);
+app.component("DataTable", DataTable);
+app.component("Column", Column);
+
 
 app.mount("#app")
