@@ -1,8 +1,6 @@
 #!/var/www/test/.venv/bin/cgi_venv_launch
 
-import csv
 import datetime
-import typing
 import pydantic
 import sqlmodel
 
@@ -20,21 +18,6 @@ class Customer(sqlmodel.SQLModel, table=True):
     postal_code: int                        = sqlmodel.Field(schema_extra={"validation_alias":"Postleitzahl"})
     city: str                               = sqlmodel.Field(schema_extra={"validation_alias":"Stadt"})
     email: pydantic.EmailStr | None         = sqlmodel.Field(schema_extra={"validation_alias":"EMail"})
-
-    @pydantic.field_validator("date_of_birth", mode="before")
-    @classmethod
-    def validate_dob(cls, v: typing.Any) -> datetime.datetime:
-        if not v:
-            return None
-        return datetime.datetime.strptime(v, "%d.%m.%Y")
-    
-    @pydantic.field_validator("email", mode="before")
-    @classmethod
-    def validate_email(cls, v: typing.Any) -> datetime.datetime:
-        if not v:
-            return None
-        return v
-
 
 CustomerList = pydantic.TypeAdapter(list[Customer])
 

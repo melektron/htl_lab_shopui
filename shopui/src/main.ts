@@ -1,7 +1,7 @@
 import "./assets/main.css"
 
 import { createApp } from "vue"
-import router from "./router";
+import router from "./router.ts";
 import App from "./App.vue"
 
 import PrimeVue from "primevue/config";
@@ -23,6 +23,8 @@ import Fieldset from "primevue/fieldset";
 import Message from "primevue/message";
 import DataTable from "primevue/datatable";
 import Column from "primevue/column";
+import MultiSelect from "primevue/multiselect";
+import DatePicker from "primevue/datepicker";
 
 
 const app = createApp(App)
@@ -66,6 +68,9 @@ app.component("Fieldset", Fieldset);
 app.component("Message", Message);
 app.component("DataTable", DataTable);
 app.component("Column", Column);
+app.component("MultiSelect", MultiSelect);
+app.component("DatePicker", DatePicker);
+
 
 
 app.mount("#app")

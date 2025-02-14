@@ -37,10 +37,17 @@ const visible = ref(false);
         </p>
         
         <Dialog v-model:visible="visible" modal header="Credits">
-            Database Backend: MrFlunter<br>
-            Frontend and Systems: melektron<br>
+            Developed by melektron & MrFlunter<br>
             &copy ELEKTRON 2025 - now<br>
-            https://github.com/melektron/shopui (maybe in the future)
+            <span class="pi pi-github"/>
+            <a 
+                class="underline" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                href="https://github.com/melektron/htl_lab_shopui"
+            >
+                melektron/htl_lab_shopui
+            </a>
         </Dialog>
     </div>
 </template>

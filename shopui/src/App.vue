@@ -119,8 +119,8 @@ const current_route = useRoute();
 <template>
     <main class="w-full h-full gap-std p-std bg-surface-950">
         <div class="icon-wrapper flex justify-center items-center p-std rounded-2xl border-2 border-primary box-border gap-0.5">
-            <span class="pi pi-shop !text-5xl pr-2"></span>
-            <span class="leading-[100%] align-top text-5xl">
+            <span class="pi pi-shop !text-4xl pr-2"></span>
+            <span class="leading-[100%] align-top text-4xl">
                 ShopUI<sup>&reg</sup>
             </span>
         </div>
@@ -163,7 +163,7 @@ main {
     grid:
         "icon content"
         "menu content";
-    grid-template-columns: 20em 1fr;
+    grid-template-columns: 15em 1fr;
     grid-template-rows: auto 1fr;
 }
 
