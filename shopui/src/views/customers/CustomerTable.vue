@@ -90,7 +90,7 @@ clearFilters();
                         class="w-full"
                         ref="search_bar" 
                         v-model="(filters['global'] as DataTableFilterMetaData).value" 
-                        placeholder="Search (Ctrl+K)" 
+                        placeholder="Keyword Search (Ctrl+K)" 
                     />
                 </IconField>
             </template>
