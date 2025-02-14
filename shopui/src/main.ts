@@ -25,6 +25,7 @@ import DataTable from "primevue/datatable";
 import Column from "primevue/column";
 import MultiSelect from "primevue/multiselect";
 import DatePicker from "primevue/datepicker";
+import Chart from "primevue/chart";
 
 
 const app = createApp(App)
@@ -70,6 +71,7 @@ app.component("DataTable", DataTable);
 app.component("Column", Column);
 app.component("MultiSelect", MultiSelect);
 app.component("DatePicker", DatePicker);
+app.component("Chart", Chart);
 
 
 
