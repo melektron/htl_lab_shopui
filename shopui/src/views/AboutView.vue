@@ -13,6 +13,10 @@ import { ref } from 'vue';
 
 const visible = ref(false);
 
+function goToGoarnix() {
+    window.open("https://goarnix.dev/", "_blank")?.focus()
+}
+
 </script>
 
 <template>
@@ -32,7 +36,7 @@ const visible = ref(false);
         </p>
 
         <p class="text-2xl flex gap-std">
-            <Button label="Getting started" />
+            <Button label="Getting started" @click="goToGoarnix" />
             <Button label="Credits" @click="visible = true"/>
         </p>
         
