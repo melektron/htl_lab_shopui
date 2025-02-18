@@ -21,6 +21,7 @@ class Customer(sqlmodel.SQLModel, table=True):
     city: str                               = sqlmodel.Field(schema_extra={"validation_alias":"Stadt"})
     email: pydantic.EmailStr | None         = sqlmodel.Field(schema_extra={"validation_alias":"EMail"})
 
+    # cast date of birth to datetime
     @pydantic.field_validator("date_of_birth", mode="before")
     @classmethod
     def validate_dob(cls, v: typing.Any) -> datetime.datetime:
@@ -28,9 +29,10 @@ class Customer(sqlmodel.SQLModel, table=True):
             return None
         return datetime.datetime.strptime(v, "%d.%m.%Y")
     
+    # check if email is available 
     @pydantic.field_validator("email", mode="before")
     @classmethod
-    def validate_email(cls, v: typing.Any) -> datetime.datetime:
+    def validate_email(cls, v: typing.Any) -> str:
         if not v:
             return None
         return v
